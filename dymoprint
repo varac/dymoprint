@@ -58,13 +58,13 @@ except ImportError as error:
     USE_BARCODE = False
 
 
-DESCRIPTION = 'Linux Software to print with LabelManager PnP from Dymo\n written in Python'
+DESCRIPTION = 'Linux Software to print with LabelManager from Dymo\n written in Python'
 DEV_CLASS       = 3
 DEV_VENDOR      = 0x0922
-DEV_PRODUCT     = 0x1002
+DEV_PRODUCT     = 0x1004
 #DEV_PRODUCT     = 0x1001
 DEV_NODE        = None
-DEV_NAME        = 'Dymo LabelManager PnP'
+DEV_NAME        = 'Dymo LabelManager 420P'
 #FONT_FILENAME  = '/usr/share/fonts/truetype/ttf-bitstream-vera/Vera.ttf'
 FONT_CONFIG = {'regular':'/usr/share/fonts/truetype/ubuntu-font-family/Ubuntu-R.ttf',     # regular font
                'bold':'/usr/share/fonts/truetype/ubuntu-font-family/Ubuntu-B.ttf',        # bold font
@@ -206,7 +206,7 @@ class DymoLabeler:
         print(response)
 
     def printLabel(self, lines, margin=56*2):
-        """Print the label described by lines. (Automatically split label if 
+        """Print the label described by lines. (Automatically split label if
            larger than maxLines)"""
 
         while len(lines) > self.maxLines + 1:
